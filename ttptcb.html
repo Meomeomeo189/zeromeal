@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="ZeroMeal description" content="ZeroMeal">
+    <meta name="keywords" content="ZeroMeal NetZero Tính toán kgCO2/kgfood">
+    <meta name="viewport" content="width=1024">
+    <title>Zero Meal</title>
+    <link rel="stylesheet" href="./ttptcb.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="Home_section">
+        <h1 id="title" style="font-size: 30px; color: #337f04;">ZeroMeal</h1> 
+        <h1 id="title1" style="font-size: 20px; color: #337f04;">Hướng tới mục tiêu Net Zero cho người Việt Nam</h1>
+        
+        <nav>
+            <span><a class="nav_NetZero_link" href="./index.html">Home</a></span>
+            <span><a class="nav_ZeroMeal_link" href="#ppnc">Phương pháp nghiên cứu</a></span>
+            <span><a class="nav_CCTTPT_link" href="#tptCO2tba">Tính phát thải Carbon</a></span>
+            <span><a class="nav_Contact_link" href="#tdbv">Thực đơn bền vững</a></span>
+        </nav>
+    </div>
+
+    <div id="ppnc" class="ppnc">
+        
+        <span class="ppnc_span" style="color: #337f04;">Phương<br>Pháp<br>Nghiên<br>cứu</span>
+        <div class="ppnc_loremipsum">
+            <p style="font-size: 1.2 vw">
+                Trong khuôn khổ phát triển trang web ZeroMeal, nhóm nghiên cứu áp dụng hai phương pháp chính gồm Đánh giá vòng đời (Life Cycle Assessment - LCA) và Cường độ phát thải carbon (Carbon Intensity - CI) nhằm ước tính lượng phát thải khí nhà kính tương ứng với từng loại thực phẩm trong bữa ăn.
+                <br>
+                <br>
+                <b>1. Phương pháp Đánh giá vòng đời (LCA)</b>
+                <br>
+                Phương pháp LCA được sử dụng để phân tích toàn bộ chuỗi vòng đời của sản phẩm thực phẩm – từ giai đoạn sản xuất nguyên liệu (trồng trọt, chăn nuôi), thu hoạch, vận chuyển, chế biến, phân phối cho đến khi tiêu dùng. LCA cho phép xác định các giai đoạn gây phát thải lớn nhất trong chuỗi cung ứng thực phẩm, từ đó hỗ trợ xây dựng cơ sở dữ liệu về phát thải theo từng loại thực phẩm cụ thể.
+                <br>
+                Phạm vi nghiên cứu: Giới hạn từ nông trại đến bàn ăn (“farm to fork”)                
+                <br>
+                <br>
+                <b>2. Phương pháp Cường độ phát thải carbon (CI)</b>
+                <br>
+                Dựa trên dữ liệu từ phương pháp LCA, chỉ số CI được sử dụng để biểu diễn lượng phát thải CO₂ tương đương (CO₂e) trên mỗi đơn vị thực phẩm (ví dụ: 100g, 1 khẩu phần hoặc 1 kg). Đây là thông số đầu ra chính được tích hợp trong hệ thống tính toán của ZeroMeal.
+                <br>
+                <br>
+                Ở nghiên cứu này, nhóm tác giả sử dụng số liệu quy đổi từ:
+                <br>
+                <b> Bảng: Phát thải trung bình của sản phẩm nông nghiệp</b>
+                <br>
+                Table 58. P357. Statistical Yearbook - World food and agricuture 2023 - FAO
+                <br>
+                <br>
+                <b>3. Phương pháp thực địa (Field Measurement)</b>
+                <br>
+                Phương pháp này giúp đo lường lượng CO2 mà 1 hecta rừng có thể hấp thụ.
+                <br>
+                Trong phạm vi nghiên cứu này, nhóm tác giả sử dụng số liệu quy đổi trung bình từ các nghiên cứu đã có tại Việt Nam.
+            </p>
+
+        </div>
+        
+
+    </div>
+    
+    <div id="tptCO2tba">
+        <span class="tptCO2tba_span" style="color: #337f04;">Tính Phát Thải Carbon</span>
+        <div class="tptCO2tba">
+            <p style="color: #337f04; font-size: 2vw;"><b>Vui lòng nhập số lượng thực phẩm trước khi chế biến:</b></p>
+            
+        <p style="color: #337f04; font-size: 1.5vw;"><b>Lương thực</b></p>
+    <label class="nhap_so_lieu">Gạo (kg): <input type="number" id="gao" step="0.01" oninput="tinhPhatThai()"></label>
+    <label class="nhap_so_lieu">Lương thực khác (kg): <input type="number" id="luongthuckhac" step="0.01" oninput="tinhPhatThai()"></label>
+        <br>
+        <p style="color: #337f04; font-size: 1.5vw;"><b>Thịt:</b></p>
+    <label class="nhap_so_lieu">Thịt bò (kg): <input type="number" id="bo" step="0.01" oninput="tinhPhatThai()"></label>
+    <label class="nhap_so_lieu">Thịt lợn (kg): <input type="number" id="lon" step="0.01" oninput="tinhPhatThai()"></label>
+    <label class="nhap_so_lieu">Thịt gà (kg): <input type="number" id="ga" step="0.01" oninput="tinhPhatThai()"></label>
+        <br>
+        <p style="color: #337f04; font-size: 1.5vw;"><b>Cá và hải sản:</b></p>
+    <label class="nhap_so_lieu">Cá (kg): <input type="number" id="ca" step="0.01" oninput="tinhPhatThai()"></label>
+    <label class="nhap_so_lieu">Tôm (kg): <input type="number" id="tom" step="0.01" oninput="tinhPhatThai()"></label>
+        <br>
+        <p style="color: #337f04; font-size: 1.5vw;"><b>Trứng, sữa, đậu phụ:</b></p>
+    <label class="nhap_so_lieu">Trứng (kg): <input type="number" id="trung" step="0.01" oninput="tinhPhatThai()"></label>
+    <label class="nhap_so_lieu">Sữa bò (kg): <input type="number" id="suabo" step="0.01" oninput="tinhPhatThai()"></label>
+    <label class="nhap_so_lieu">Đậu phụ (kg): <input type="number" id="dauphu" step="0.01" oninput="tinhPhatThai()"></label>
+        <br>
+        <p style="color: #337f04; font-size: 1.5vw;"><b>Rau quả:</b></p>
+    <label class="nhap_so_lieu">Cà chua (kg): <input type="number" id="cachua" step="0.01" oninput="tinhPhatThai()"></label>
+    <label class="nhap_so_lieu">Cải thảo (kg): <input type="number" id="caithao" step="0.01" oninput="tinhPhatThai()"></label>
+    <label class="nhap_so_lieu">Dưa chuột (kg): <input type="number" id="duachuot" step="0.01" oninput="tinhPhatThai()"></label>
+    <label class="nhap_so_lieu">Rau muống (kg): <input type="number" id="raumuong" step="0.01" oninput="tinhPhatThai()"></label>
+    <label class="nhap_so_lieu">Rau dền (kg): <input type="number" id="rauden" step="0.01" oninput="tinhPhatThai()"></label>
+        <br>
+            <br>
+    <h2 id="ketqua" style="color: #337f04;">Tổng phát thải CO₂: 0 kg. Lượng phát thải này tương đướng với: 0 tín chỉ Carbon.</h2>
+    <h2 id="rung" style="color: #337f04;"><b>Bạn có biết:</b>Cần một diện tích rừng là 0 m2 để có thể cô lập hết lượng CO2 bởi bữa ăn này trong một ngày.</h2>
+
+
+    <script>
+        const heSoPhatThai = {
+            bo: 42.3,
+            lon: 2.0,
+            ga: 1.2,
+            gao: 1.0,
+            luongthuckhac: 0.2,
+            trung: 1.0,
+            suabo: 0.9,
+            cachua: 0.05,
+            caithao: 0.1,
+            duachuot: 0.05,
+            raumuong: 0.01,
+            rauden: 0.1,
+            dauphu: 0.1,
+            ca: 1.3,
+            tom: 10,
+        };
+
+        function tinhPhatThai() {
+            let tong = 0;
+            for (let loai in heSoPhatThai) {
+                let val = parseFloat(document.getElementById(loai).value) || 0;
+                tong += val * heSoPhatThai[loai];
+            }
+            const dientichrung = tong / 9.5;
+            const tinchicarbon = tong / 1000;
+            document.getElementById("ketqua").innerText = "Tổng lượng phát thải CO₂ trong bữa ăn này là: " + tong.toFixed(2) + " kgCO₂EQ. Lượng phát thải này tương đương với: " + tinchicarbon.toFixed(2) + " số tín chỉ Carbon.";
+            document.getElementById("rung").innerText = "Bạn có biết: Cần một diện tích rừng là " + dientichrung.toFixed(2) + " m2  trong một năm để có thể cô lập hết lượng CO2 bởi bữa ăn này.";
+
+        }
+    </script>
+        </div>
+    </div>
+
+    <div>
+        <span id="tdbv" class="tdbv_span" style="color: #337f04;">Thực<br>Đơn<br>Bền<br>Vững</span>
+        <div class="tdbv">
+                <p style="font-size: 1.2 vw">
+                    Xây dựng thực đơn bền vững không chỉ giúp bảo vệ môi trường mà còn hỗ trợ bảo vệ sức khỏe lâu dài. Dưới đây là một số gợi ý giúp bạn chuyển đổi thực đơn hàng ngày theo hướng thân thiện với môi trường:
+                    <br>
+                    <br>
+                    <b>1. Tăng cường thực phẩm có nguồn góc thực vật</b>
+                    <br>
+                    Ưu tiên rau củ, trái cây và các loại đậu,... Những thực phẩm này giúp làm phong phú nguồn chất dinh dưỡng, thay thế một phần đạm và có lượng CO2 thấp hơn rất nhiều so với thịt đỏ và các sản phẩm từ động vật.
+                    <br>
+                    <br>
+                    <b>2. Giảm tiêu thụ thịt đỏ, thay thế bằng các sản phẩm giàu đạm khác</b>
+                    <br>
+                    Thịt bò và thịt cừu là những loại thực phẩm gây ra mức phát thải cao nhất. Có thể thay thế bằng các loại thịt trắng: thịt lợn, thịt gia cầm, cá hoặc các thực phẩm giàu đạm thực vật từ đậu: đậu phụ, tempeh.
+                    <br>
+                    <br>
+                    <b>3. Ưu tiên thực phẩm theo mùa và thực phẩm tại địa phương</b>
+                    <br>
+                    Thực phẩm được sản xuất gần nơi tiêu thụ giúp giảm đáng kể lượng phát thải sinh ra do quá trình vận chuyển. Đồng thời, thực phẩm theo mùa tươi ngon và có giá thành hợp lý hơn.
+                    <br>
+                    <br>
+                    <b>4. Hạn chế thực phẩm chế biến sẵn và được đóng gói nhiều lớp</b>
+                    <br>
+                    Các loại thực phẩm này thường tạo ra nhiều phát thải do quá trình chế biến và vận chuyển. Bao bì nhựa cũng là nguyên nhân gây hấp thụ vi nhựa, ảnh hưởng lớn đến sức khỏe và môi trường.
+                    <br>
+                    <br>
+                    <b>5. Tránh lãng phí thực phẩm</b>
+                    <br>
+                    Lên thực đơn hợp lý, tận dụng thức ăn thừa và bảo quản đúng cách giúp tiết kiệm chi phí, đồng thời giúp giảm lượng khí nhà kính phát sinh từ rác thải thực phẩm. 
+                </p>
+        </div>
+    </div>
+
+    <div id="Contact" class="Contact">
+        <b style="color: #337f04;">LIÊN HỆ:</b>
+        <b>Lab Khoa học Cảm quan</b>
+        <br>
+        <p>- TS. Hoàng Quốc Tuấn: abc@gmail.com
+            <br>
+           - ThS. Lê Tuấn Phúc: abc@gmail.com
+           <br>
+           - Trần Yến Nhi: abc@gmail.com
+           <br>
+            - Nguyễn Thảo Ly: abc@gmail.com
+        </p>
+   </div>
+    
+
+</body>
